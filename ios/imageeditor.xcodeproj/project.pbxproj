@@ -13,22 +13,22 @@
 		13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 13B07FB51A68108700A75B9A /* Images.xcassets */; };
 		761780ED2CA45674006654EE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 761780EC2CA45674006654EE /* AppDelegate.swift */; };
 		81AB9BB82411601600AC10FF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */; };
-		B8A23653B2FCE8EE14D46CEC /* libPods-imageeditor.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 226F95F13757BB3C70C63185 /* libPods-imageeditor.a */; };
+		E17CFC59AB8B2E8069132C48 /* libPods-imageeditor.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 15F90A68A2EA6D8548954CE6 /* libPods-imageeditor.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		0450EB772D423A660050B853 /* ImageManupulation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageManupulation.swift; sourceTree = "<group>"; };
 		0450EB7F2D423C9C0050B853 /* ImageManupulation.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ImageManupulation.m; sourceTree = "<group>"; };
 		0450EB822D423D3D0050B853 /* imageeditor-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "imageeditor-Bridging-Header.h"; sourceTree = "<group>"; };
-		1059EDE2D41F7B67660D9808 /* Pods-imageeditor.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-imageeditor.release.xcconfig"; path = "Target Support Files/Pods-imageeditor/Pods-imageeditor.release.xcconfig"; sourceTree = "<group>"; };
 		13B07F961A680F5B00A75B9A /* imageeditor.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = imageeditor.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		13B07FB51A68108700A75B9A /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Images.xcassets; path = imageeditor/Images.xcassets; sourceTree = "<group>"; };
 		13B07FB61A68108700A75B9A /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Info.plist; path = imageeditor/Info.plist; sourceTree = "<group>"; };
 		13B07FB81A68108700A75B9A /* PrivacyInfo.xcprivacy */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = PrivacyInfo.xcprivacy; path = imageeditor/PrivacyInfo.xcprivacy; sourceTree = "<group>"; };
-		226F95F13757BB3C70C63185 /* libPods-imageeditor.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-imageeditor.a"; sourceTree = BUILT_PRODUCTS_DIR; };
-		450D3E6CFC0851D22BF0B5D7 /* Pods-imageeditor.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-imageeditor.debug.xcconfig"; path = "Target Support Files/Pods-imageeditor/Pods-imageeditor.debug.xcconfig"; sourceTree = "<group>"; };
+		15F90A68A2EA6D8548954CE6 /* libPods-imageeditor.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-imageeditor.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		761780EC2CA45674006654EE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = AppDelegate.swift; path = imageeditor/AppDelegate.swift; sourceTree = "<group>"; };
 		81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = LaunchScreen.storyboard; path = imageeditor/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		A33AF62ED664D908D85E2B84 /* Pods-imageeditor.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-imageeditor.debug.xcconfig"; path = "Target Support Files/Pods-imageeditor/Pods-imageeditor.debug.xcconfig"; sourceTree = "<group>"; };
+		DE4E6BD7BC625F96864E3B51 /* Pods-imageeditor.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-imageeditor.release.xcconfig"; path = "Target Support Files/Pods-imageeditor/Pods-imageeditor.release.xcconfig"; sourceTree = "<group>"; };
 		ED297162215061F000B7C4FE /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = System/Library/Frameworks/JavaScriptCore.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
@@ -37,7 +37,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B8A23653B2FCE8EE14D46CEC /* libPods-imageeditor.a in Frameworks */,
+				E17CFC59AB8B2E8069132C48 /* libPods-imageeditor.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -63,7 +63,7 @@
 			isa = PBXGroup;
 			children = (
 				ED297162215061F000B7C4FE /* JavaScriptCore.framework */,
-				226F95F13757BB3C70C63185 /* libPods-imageeditor.a */,
+				15F90A68A2EA6D8548954CE6 /* libPods-imageeditor.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -100,8 +100,8 @@
 		BBD78D7AC51CEA395F1C20DB /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				450D3E6CFC0851D22BF0B5D7 /* Pods-imageeditor.debug.xcconfig */,
-				1059EDE2D41F7B67660D9808 /* Pods-imageeditor.release.xcconfig */,
+				A33AF62ED664D908D85E2B84 /* Pods-imageeditor.debug.xcconfig */,
+				DE4E6BD7BC625F96864E3B51 /* Pods-imageeditor.release.xcconfig */,
 			);
 			path = Pods;
 			sourceTree = "<group>";
@@ -113,13 +113,13 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 13B07F931A680F5B00A75B9A /* Build configuration list for PBXNativeTarget "imageeditor" */;
 			buildPhases = (
-				F3D39363A6D21DE981492058 /* [CP] Check Pods Manifest.lock */,
+				D5BE51C1079572CFAC6495F1 /* [CP] Check Pods Manifest.lock */,
 				13B07F871A680F5B00A75B9A /* Sources */,
 				13B07F8C1A680F5B00A75B9A /* Frameworks */,
 				13B07F8E1A680F5B00A75B9A /* Resources */,
 				00DD1BFF1BD5951E006B06BC /* Bundle React Native code and images */,
-				AD7810370C9035FC8DD04832 /* [CP] Embed Pods Frameworks */,
-				C6C0F380B84624ED2EDA73D3 /* [CP] Copy Pods Resources */,
+				3DC3A502BA12BC3D4E54B3DA /* [CP] Embed Pods Frameworks */,
+				68DFE81C5A746935976AD968 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -191,7 +191,7 @@
 			shellPath = /bin/sh;
 			shellScript = "set -e\n\nWITH_ENVIRONMENT=\"$REACT_NATIVE_PATH/scripts/xcode/with-environment.sh\"\nREACT_NATIVE_XCODE=\"$REACT_NATIVE_PATH/scripts/react-native-xcode.sh\"\n\n/bin/sh -c \"$WITH_ENVIRONMENT $REACT_NATIVE_XCODE\"\n";
 		};
-		AD7810370C9035FC8DD04832 /* [CP] Embed Pods Frameworks */ = {
+		3DC3A502BA12BC3D4E54B3DA /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -208,7 +208,7 @@
 			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-imageeditor/Pods-imageeditor-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		C6C0F380B84624ED2EDA73D3 /* [CP] Copy Pods Resources */ = {
+		68DFE81C5A746935976AD968 /* [CP] Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -225,7 +225,7 @@
 			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-imageeditor/Pods-imageeditor-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		F3D39363A6D21DE981492058 /* [CP] Check Pods Manifest.lock */ = {
+		D5BE51C1079572CFAC6495F1 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -265,7 +265,7 @@
 /* Begin XCBuildConfiguration section */
 		13B07F941A680F5B00A75B9A /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 450D3E6CFC0851D22BF0B5D7 /* Pods-imageeditor.debug.xcconfig */;
+			baseConfigurationReference = A33AF62ED664D908D85E2B84 /* Pods-imageeditor.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
@@ -295,7 +295,7 @@
 		};
 		13B07F951A680F5B00A75B9A /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 1059EDE2D41F7B67660D9808 /* Pods-imageeditor.release.xcconfig */;
+			baseConfigurationReference = DE4E6BD7BC625F96864E3B51 /* Pods-imageeditor.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;

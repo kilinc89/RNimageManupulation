@@ -25,10 +25,13 @@ function App(): React.JSX.Element {
 
   const [imgUrl, setImgUrl] = React.useState('');
   const [lipstickImgUrl, setLipstickImgUrl] = React.useState('');
+  const [hairColorImgUrl, setHairColorImgUrl] = React.useState('');
+
+  const DEFAULT_IMAGE = Image.resolveAssetSource(DefaultImage).uri;
 
   async function testManipulateImage() {
     try {
-      const DEFAULT_IMAGE = Image.resolveAssetSource(DefaultImage).uri;
+
       const result = await ImageManipulation.convertToGrayscale(DEFAULT_IMAGE);
       console.log('result', result); // "Manipulated Image URL: https://example.com/image.jpg"
       setImgUrl(result);
@@ -39,22 +42,31 @@ function App(): React.JSX.Element {
 
   async function addLipstickToImage() {
     try {
-      const DEFAULT_IMAGE = Image.resolveAssetSource(DefaultImage).uri;
-      const hexColor = '#FF0000'; // Ruj rengi (kırmızı)
+      const hexColor = '#FF0000'; // (red lipstick color)
       const resultUrl = await ImageManipulation.addLipstick(DEFAULT_IMAGE, hexColor);
       setLipstickImgUrl(resultUrl);
-      console.log('Lipstick Image URL:', resultUrl);
     } catch (error) {
       console.error('Error:', error);
     }
   }
 
+  async function changeEyebrowColor() {
+    try {
+      const hexColor = '#4A3120'; // (purple hair color)
+      const resultUrl = await ImageManipulation.changeEyebrowColor(DEFAULT_IMAGE, hexColor);
+      setHairColorImgUrl(resultUrl);
+    } catch (error) {
+      console.error('Error:', error);
+    }
+  }
+
+
   useEffect(() => {
-    const DEFAULT_IMAGE = Image.resolveAssetSource(DefaultImage).uri;
-    console.log(333, DEFAULT_IMAGE);
     testManipulateImage();
 
     addLipstickToImage();
+
+    changeEyebrowColor();
 
   }, []);
 
@@ -82,6 +94,12 @@ function App(): React.JSX.Element {
         <Text style={styles.highlight}>Lipstick added</Text>
         <Image
           source={{ uri: lipstickImgUrl }}
+          style={{ width: 200, height: 200 }}
+        />
+
+        <Text style={styles.highlight}>EyeBrow hanged</Text>
+        <Image
+          source={{ uri: hairColorImgUrl }}
           style={{ width: 200, height: 200 }}
         />
       </ScrollView>

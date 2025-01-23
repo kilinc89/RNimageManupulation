@@ -16,4 +16,9 @@ RCT_EXTERN_METHOD(addLipstick:(NSString *)imageUrl
                   resolve:(RCTPromiseResolveBlock)resolve
                   reject:(RCTPromiseRejectBlock)reject)
 
+RCT_EXTERN_METHOD(changeEyebrowColor:(NSString *)imageUrl
+                  hexColor:(NSString *)hexColor
+                  resolve:(RCTPromiseResolveBlock)resolve
+                  reject:(RCTPromiseRejectBlock)reject)
+
 @end
