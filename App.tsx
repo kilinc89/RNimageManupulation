@@ -5,92 +5,85 @@
  * @format
  */
 
-import React from 'react';
-import type {PropsWithChildren} from 'react';
+import React, { useEffect } from 'react';
 import {
+  Image,
   SafeAreaView,
   ScrollView,
-  StatusBar,
   StyleSheet,
   Text,
-  useColorScheme,
   View,
 } from 'react-native';
+import DefaultImage from './assets/woman.jpg';
+import { NativeModules } from 'react-native';
 
-import {
-  Colors,
-  DebugInstructions,
-  Header,
-  LearnMoreLinks,
-  ReloadInstructions,
-} from 'react-native/Libraries/NewAppScreen';
+const { ImageManipulation } = NativeModules;
 
-type SectionProps = PropsWithChildren<{
-  title: string;
-}>;
 
-function Section({children, title}: SectionProps): React.JSX.Element {
-  const isDarkMode = useColorScheme() === 'dark';
-  return (
-    <View style={styles.sectionContainer}>
-      <Text
-        style={[
-          styles.sectionTitle,
-          {
-            color: isDarkMode ? Colors.white : Colors.black,
-          },
-        ]}>
-        {title}
-      </Text>
-      <Text
-        style={[
-          styles.sectionDescription,
-          {
-            color: isDarkMode ? Colors.light : Colors.dark,
-          },
-        ]}>
-        {children}
-      </Text>
-    </View>
-  );
-}
 
 function App(): React.JSX.Element {
-  const isDarkMode = useColorScheme() === 'dark';
 
-  const backgroundStyle = {
-    backgroundColor: isDarkMode ? Colors.darker : Colors.lighter,
-  };
+  const [imgUrl, setImgUrl] = React.useState('');
+  const [lipstickImgUrl, setLipstickImgUrl] = React.useState('');
+
+  async function testManipulateImage() {
+    try {
+      const DEFAULT_IMAGE = Image.resolveAssetSource(DefaultImage).uri;
+      const result = await ImageManipulation.convertToGrayscale(DEFAULT_IMAGE);
+      console.log('result', result); // "Manipulated Image URL: https://example.com/image.jpg"
+      setImgUrl(result);
+    } catch (error) {
+      console.error(error);
+    }
+  }
+
+  async function addLipstickToImage() {
+    try {
+      const DEFAULT_IMAGE = Image.resolveAssetSource(DefaultImage).uri;
+      const hexColor = '#FF0000'; // Ruj rengi (kırmızı)
+      const resultUrl = await ImageManipulation.addLipstick(DEFAULT_IMAGE, hexColor);
+      setLipstickImgUrl(resultUrl);
+      console.log('Lipstick Image URL:', resultUrl);
+    } catch (error) {
+      console.error('Error:', error);
+    }
+  }
+
+  useEffect(() => {
+    const DEFAULT_IMAGE = Image.resolveAssetSource(DefaultImage).uri;
+    console.log(333, DEFAULT_IMAGE);
+    testManipulateImage();
+
+    addLipstickToImage();
+
+  }, []);
 
   return (
-    <SafeAreaView style={backgroundStyle}>
-      <StatusBar
-        barStyle={isDarkMode ? 'light-content' : 'dark-content'}
-        backgroundColor={backgroundStyle.backgroundColor}
-      />
+    <SafeAreaView >
+
       <ScrollView
         contentInsetAdjustmentBehavior="automatic"
-        style={backgroundStyle}>
-        <Header />
-        <View
-          style={{
-            backgroundColor: isDarkMode ? Colors.black : Colors.white,
-          }}>
-          <Section title="Step One">
-            Edit <Text style={styles.highlight}>App.tsx</Text> to change this
-            screen and then come back to see your edits.
-          </Section>
-          <Section title="See Your Changes">
-            <ReloadInstructions />
-          </Section>
-          <Section title="Debug">
-            <DebugInstructions />
-          </Section>
-          <Section title="Learn More">
-            Read the docs to discover what to do next:
-          </Section>
-          <LearnMoreLinks />
+      >
+
+        <View>
+          <Text style={styles.highlight}>Original</Text>
         </View>
+
+        <Image
+          source={DefaultImage}
+          style={{ width: 200, height: 200 }}
+        />
+
+        <Text style={styles.highlight}>Edited Gray</Text>
+        <Image
+          source={{ uri: imgUrl }}
+          style={{ width: 200, height: 200 }}
+        />
+        <Text style={styles.highlight}>Lipstick added</Text>
+        <Image
+          source={{ uri: lipstickImgUrl }}
+          style={{ width: 200, height: 200 }}
+        />
       </ScrollView>
     </SafeAreaView>
   );
